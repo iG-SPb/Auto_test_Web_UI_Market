@@ -1,10 +1,14 @@
 package ru.geekbrains.HomeWork6.pages;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.geekbrains.HomeWork6.base.BasePage;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChoiceLocation extends BasePage {
 
@@ -19,6 +23,8 @@ public class ChoiceLocation extends BasePage {
     @FindBy( xpath = "//span[text()='Продолжить с новым регионом']")
     private WebElement clickButton;
 
+    @FindBy(xpath = "//div[@class='_3UPaiAsDwc']")
+    private WebElement popUpWindows;
     @FindBy(xpath = "//span[@class='_18cRHgDUj2']")
     private WebElement popUpText;
 
@@ -53,6 +59,17 @@ public class ChoiceLocation extends BasePage {
     @Step("Продолжить с новым регионом")
     public ChoiceLocation enterButton() {
         clickButton.click();
+        return this;
+    }
+
+    @Step("Проверка PopUp окна с новой локацией")
+    public ChoiceLocation checkNewContactPopUp() {
+        String message = wait10second.until(ExpectedConditions
+                .presenceOfElementLocated(By.xpath("//div[@class='_3UPaiAsDwc']")))
+                .getText();
+        System.out.println("message: " + message);
+        assertTrue(message.contains("Теперь вы видите товары\n" +
+                "с доставкой в Калининград"));
         return this;
     }
 }

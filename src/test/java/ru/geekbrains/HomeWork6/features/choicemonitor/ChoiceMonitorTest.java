@@ -5,6 +5,7 @@ import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import ru.geekbrains.HomeWork6.base.BaseTest;
 import ru.geekbrains.HomeWork6.pages.ChoiceLocation;
+import ru.geekbrains.HomeWork6.pages.ChoiceMonitor;
 
 @Feature("ChoiceMonitor Test")
 public class ChoiceMonitorTest extends BaseTest{
@@ -13,11 +14,26 @@ public class ChoiceMonitorTest extends BaseTest{
     String tmpName = faker.pokemon().name();
 
     @Test
-    void createNewProjectsTest() throws InterruptedException {
-        ChoiceLocation choiceMonitor = new ChoiceLocation(driver);
+    void createMonitorTest() throws InterruptedException {
+        ChoiceMonitor choiceMonitor = new ChoiceMonitor(driver);
 
-//        projectPage
-//                .clickOnCreateNewProjectsButton()
+        choiceMonitor.enterMainCatalog();
+        Thread.sleep(2000);
+        choiceMonitor.enterCompCatalog();
+        Thread.sleep(2000);
+        choiceMonitor.enterMonitorCatalog();
+        Thread.sleep(2000);
+        choiceMonitor.enterMonitorLG();
+        Thread.sleep(3000);
+        choiceMonitor.enterMonitorResolution();
+        Thread.sleep(3000);
+        choiceMonitor.enterMonitorIPS();
+        Thread.sleep(3000);
+        choiceMonitor.enterSelectPrice();
+        Thread.sleep(3000);
+        choiceMonitor.enterAppendFavorites();
+        Thread.sleep(5000);
+        choiceMonitor.enterClickFavorites();
         Thread.sleep(3000);
     }
 }

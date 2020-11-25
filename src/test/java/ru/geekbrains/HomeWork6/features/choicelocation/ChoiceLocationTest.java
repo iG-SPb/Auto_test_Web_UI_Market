@@ -19,7 +19,8 @@ public class ChoiceLocationTest extends BaseTest {
         Thread.sleep(1000);
         choiceLocationPage
                 .enterNewLocation()
-                .enterButton();
+                .enterButton()
+                .checkNewContactPopUp();
         Thread.sleep(5000);
     }
 }
