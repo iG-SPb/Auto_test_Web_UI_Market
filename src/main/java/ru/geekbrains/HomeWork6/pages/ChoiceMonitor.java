@@ -1,14 +1,10 @@
 package ru.geekbrains.HomeWork6.pages;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import ru.geekbrains.HomeWork6.base.BasePage;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ChoiceMonitor extends BasePage {
     @FindBy(xpath = "//div[@data-apiary-widget-name='@MarketNode/HeaderCatalogEntrypoint']")

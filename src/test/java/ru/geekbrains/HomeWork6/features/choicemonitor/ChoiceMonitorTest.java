@@ -4,7 +4,6 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import ru.geekbrains.HomeWork6.base.BaseTest;
-import ru.geekbrains.HomeWork6.pages.ChoiceLocation;
 import ru.geekbrains.HomeWork6.pages.ChoiceMonitor;
 
 @Feature("ChoiceMonitor Test")
