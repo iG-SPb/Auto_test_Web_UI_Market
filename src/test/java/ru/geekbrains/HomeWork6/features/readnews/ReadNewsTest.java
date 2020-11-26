@@ -16,13 +16,13 @@ public class ReadNewsTest extends BaseTest{
         ReadNews readNews = new ReadNews(driver);
         JavascriptExecutor js = ((JavascriptExecutor) driver);
 
-        // sleep добавлены только для визуализации
+        // sleep добавлены только для визуализации процесса
 
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         Thread.sleep(2000);
         readNews.enterMainNews();
         Thread.sleep(3000);
-        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs2 = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(1));
         readNews.enterFirstNews();
         Thread.sleep(3000);
