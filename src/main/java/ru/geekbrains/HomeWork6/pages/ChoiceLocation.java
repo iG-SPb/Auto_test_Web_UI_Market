@@ -67,7 +67,6 @@ public class ChoiceLocation extends BasePage {
         String message = wait10second.until(ExpectedConditions
                 .presenceOfElementLocated(By.xpath("//div[@class='_3UPaiAsDwc']")))
                 .getText();
-        System.out.println("message: " + message);
         assertTrue(message.contains("Теперь вы видите товары\n" +
                 "с доставкой в Калининград"));
         return this;
